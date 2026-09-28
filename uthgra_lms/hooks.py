@@ -21,3 +21,6 @@ signup_form_template = "uthgra_lms.overrides.show_signup"
 override_whitelisted_methods = {
     "lms.lms.user.sign_up": "uthgra_lms.overrides.sign_up",
 }
+
+# Serve guests (login, signup) in the System Settings language, not the browser's.
+before_request = ["uthgra_lms.language.use_site_language_for_guests"]
